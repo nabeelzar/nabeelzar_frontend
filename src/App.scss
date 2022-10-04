@@ -1,0 +1,14 @@
+@use 'base' as base;
+
+body {
+  background-color: base.$primary-color;
+}
+
+.container {
+  margin-top: 5.5rem;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}

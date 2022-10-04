@@ -1,0 +1,106 @@
+@use "src/base" as base;
+
+:root {
+  --fs-xl: 5rem;
+  --fs-400: 2rem;
+}
+
+@media (max-width: 1000px) {
+  :root {
+    --fs-xl: 4rem;
+    --fs-400: 2rem;
+  }
+}
+
+@media (max-width: 800px) {
+  :root {
+    --fs-xl: 3.35rem;
+    --fs-400: 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --fs-xl: 3rem;
+    --fs-400: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  :root {
+    --fs-xl: 2.5rem;
+    --fs-400: 1.5rem;
+  }
+}
+
+@media (max-width: 460px) {
+  :root {
+    --fs-xl: 2rem;
+    --fs-400: 1.5rem;
+  }
+}
+
+@media (max-width: 370px) {
+  :root {
+    --fs-xl: 1.25rem;
+    --fs-400: 1rem;
+  }
+}
+
+.homeContainer {
+  background-color: base.$primary-color;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+.homeTextHolder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+
+  .homeTextLarge {
+    color: white;
+    font-family: base.$font-stack;
+    font-weight: 400;
+    font-size: var(--fs-xl);
+    font-style: italic;
+  }
+  .homeTextSmall {
+    color: white;
+    font-family: base.$font-stack;
+    font-weight: 400;
+    font-size: var(--fs-400);
+  }
+  .socialButtonHolder {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    .socialButton {
+      width: 3.25rem;
+      height: 3.25rem;
+      background-color: #656579;
+      border-radius: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .img {
+        object-fit: contain;
+      }
+      &:hover {
+        background-color: white;
+        cursor: pointer;
+      }
+    }
+  }
+}
