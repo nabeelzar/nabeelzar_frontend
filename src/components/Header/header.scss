@@ -46,7 +46,9 @@
     color: white;
     font-weight: 700;
     font-style: normal;
-
+    a {
+      all: unset;
+    }
     &:hover {
       color: #f6490d;
       cursor: pointer;

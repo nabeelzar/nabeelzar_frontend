@@ -25,7 +25,7 @@ interface Props {
   imgLoc: string;
 }
 
-export const SocialButton: React.FC<Props> = ({ text, imgLoc }) => {
+const SocialButton: React.FC<Props> = ({ text, imgLoc }) => {
   return (
     <div className="socialButton">
       <a href="https://google.com" title={text}></a>
