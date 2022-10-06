@@ -7,6 +7,7 @@ import { Home } from "./components/Home/Home";
 
 import { Routes, Route, Link } from "react-router-dom";
 import Project from "./components/Projects/Project";
+import Cat from "./components/Cat/Cat";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="projects" element={<Project />} />
+          <Route path="cat" element={<Cat />} />
         </Routes>
       </div>
     </>

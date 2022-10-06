@@ -18,6 +18,10 @@ function Header() {
       text: "#Contact",
       link: "/contact",
     },
+    {
+      text: "#Cat",
+      link: "/cat",
+    },
   ];
 
   return (
