@@ -18,6 +18,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="projects" element={<Project />} />
           <Route path="cat" element={<Cat />} />
+
+          <Route path="*" element={<h1>Page not found!</h1>} />
         </Routes>
       </div>
     </>

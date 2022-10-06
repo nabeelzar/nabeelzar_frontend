@@ -1,31 +1,110 @@
 @use "src/base" as base;
 
 @media (min-width: 641px) {
-  .header {
-    .hamburgerIcon {
-      display: none;
-    }
+  .header__container {
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    display: flex;
+  }
+  .hamburgerIcon {
+    display: none;
+  }
+
+  .header__button {
+    margin: auto;
+  }
+
+  .openMenu_hidden {
+    display: none;
   }
 }
 
 @media (max-width: 640px) {
-  .header {
-    .button {
-      display: none;
-    }
-    .hamburgerIcon {
-      margin-left: 1.25rem;
-      display: flex;
-      justify-content: center;
-      width: 44px;
-      height: 44px;
-      cursor: pointer;
+  .header__container {
+    display: none;
+  }
 
-      .img {
-        background-color: white;
-        object-fit: fit;
-      }
+  .hamburgerIcon {
+    margin-left: 1rem;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    cursor: pointer;
+
+    .bar1,
+    .bar2,
+    .bar3 {
+      width: 35px;
+      height: 4px;
+      background-color: white;
+      margin: 6px 0;
+      transition: 0.4s;
     }
+
+    /* Rotate first bar */
+    .change-bar1 {
+      transform: translate(0, 11px) rotate(-45deg);
+      width: 35px;
+      height: 4px;
+      background-color: white;
+      margin: 6px 0;
+      transition: 0.4s;
+    }
+
+    /* Fade out the second bar */
+    .change-bar2 {
+      opacity: 0;
+      width: 35px;
+      height: 4px;
+      background-color: white;
+      margin: 6px 0;
+      transition: 0.4s;
+    }
+
+    /* Rotate last bar */
+    .change-bar3 {
+      transform: translate(0, -10px) rotate(45deg);
+      width: 35px;
+      height: 4px;
+      background-color: white;
+      margin: 6px 0;
+      transition: 0.4s;
+    }
+  }
+
+  .openMenu {
+    visibility: visible;
+    transition: all ease 0.5s;
+    position: absolute;
+    left: 0px;
+    top: 5.5rem;
+    right: 0px;
+    bottom: 0px;
+    opacity: 0.95;
+    z-index: 10;
+  }
+
+  .openMenu_hidden {
+    visibility: hidden;
+    position: absolute;
+    left: 0px;
+    top: 7.5rem;
+    right: 600px;
+    bottom: 0px;
+    z-index: 10;
+  }
+
+  .menuButtonHolder {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 2rem;
   }
 }
 
@@ -34,24 +113,19 @@
   margin-top: 2rem;
   margin-bottom: 2rem;
   max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  justify-content: space-between;
-  height: 100%;
-  display: flex;
-  .button {
-    font-size: 1.5rem;
-    font-family: base.$font-stack;
-    margin: auto;
-    color: white;
-    font-weight: 700;
-    font-style: normal;
-    a {
-      all: unset;
-    }
-    &:hover {
-      color: #f6490d;
-      cursor: pointer;
-    }
+}
+
+.header__button {
+  font-size: 1.5rem;
+  font-family: base.$font-stack;
+  color: white;
+  font-weight: 700;
+  font-style: normal;
+  a {
+    all: unset;
+  }
+  &:hover {
+    color: #f6490d;
+    cursor: pointer;
   }
 }
