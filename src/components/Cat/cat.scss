@@ -1,12 +1,7 @@
 @use "src/base" as base;
 
 .catContainer {
-  background-color: base.$primary-color;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
+  height: 100%;
 
   .loading {
     display: flex;

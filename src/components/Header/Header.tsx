@@ -50,7 +50,7 @@ function Header() {
           })}
         </div>
       </div>
-      <div className="header__container">
+      <div className="button__container">
         {headerButtons.map(({ text, link }, index) => {
           return <HeaderButton key={index} text={text} link={link} />;
         })}

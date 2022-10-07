@@ -1,9 +1,7 @@
 @use "src/base" as base;
 
 @media (min-width: 641px) {
-  .header__container {
-    margin-left: auto;
-    margin-right: auto;
+  .button__container {
     justify-content: space-between;
     height: 100%;
     width: 100%;
@@ -23,33 +21,34 @@
 }
 
 @media (max-width: 640px) {
-  .header__container {
+  .button__container {
     display: none;
   }
 
   .hamburgerIcon {
-    margin-left: 1rem;
-    margin-bottom: 0.5rem;
-    display: inline-block;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
     cursor: pointer;
 
     .bar1,
     .bar2,
     .bar3 {
-      width: 35px;
-      height: 4px;
-      background-color: white;
-      margin: 6px 0;
+      width: 3rem;
+      height: 0.3rem;
+      background-color: base.$primary-fcolor;
+      margin: 4px 0 4px 1rem;
       transition: 0.4s;
     }
 
     /* Rotate first bar */
     .change-bar1 {
-      transform: translate(0, 11px) rotate(-45deg);
-      width: 35px;
-      height: 4px;
-      background-color: white;
-      margin: 6px 0;
+      transform: translate(0rem, 0.9rem) rotate(-45deg);
+      width: 3rem;
+      height: 0.3rem;
+      background-color: base.$primary-fcolor;
+      margin: 4px 0 4px 1rem;
       transition: 0.4s;
     }
 
@@ -58,18 +57,18 @@
       opacity: 0;
       width: 35px;
       height: 4px;
-      background-color: white;
+      background-color: base.$primary-fcolor;
       margin: 6px 0;
       transition: 0.4s;
     }
 
     /* Rotate last bar */
     .change-bar3 {
-      transform: translate(0, -10px) rotate(45deg);
-      width: 35px;
-      height: 4px;
-      background-color: white;
-      margin: 6px 0;
+      transform: translate(0rem, -0.9rem) rotate(45deg);
+      width: 3rem;
+      height: 0.3rem;
+      background-color: base.$primary-fcolor;
+      margin: 4px 0 4px 1rem;
       transition: 0.4s;
     }
   }
@@ -79,7 +78,7 @@
     transition: all ease 0.5s;
     position: absolute;
     left: 0px;
-    top: 5.5rem;
+    top: 5rem;
     right: 0px;
     bottom: 0px;
     opacity: 0.95;
@@ -100,25 +99,28 @@
     display: flex;
     width: 100%;
     height: 100%;
-    background-color: red;
+    background-color: #101491;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
     gap: 2rem;
   }
+  .header__button {
+    margin-top: 1rem;
+    margin-left: 1rem;
+  }
 }
 
 .header {
-  background-color: base.$primary-color;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  width: 100%;
+  height: 100%;
   max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .header__button {
   font-size: 1.5rem;
-  font-family: base.$font-stack;
-  color: white;
   font-weight: 700;
   font-style: normal;
   a {

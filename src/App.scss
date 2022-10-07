@@ -1,14 +1,33 @@
-@use 'base' as base;
-
 body {
-  background-color: base.$primary-color;
+  padding: 0;
+  margin: 0;
 }
 
-.container {
-  margin-top: 5.5rem;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
+#root {
+  height: 100vh;
+}
+
+.siteContainer {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  grid-template-rows: 5rem 1fr 30px;
+  grid-template-columns: 1fr;
+}
+
+.headerContainer {
+  grid-area: header;
+}
+
+.mainContainer {
+  grid-area: main;
+}
+
+.footerContainer {
+  grid-area: footer;
+  background-color: white;
 }
