@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-// import { getCat } from "../../api/catAPI";
+import Loading from "../Shared/Loading";
 
 import axios from "axios";
 
@@ -49,7 +49,7 @@ const Cat = () => {
   useEffect(() => {
     getNewCat();
     console.log(`get cat completed ${cat.id}`);
-  }, []);
+  }, [setCat]);
 
   return (
     <>
@@ -59,7 +59,7 @@ const Cat = () => {
         <div className="catContainer">
           <div className="catCardHolder">
             <div className="catCard">
-              <img src={`https://cataas.com/${cat.url}`} alt="cat image" />
+              <img src={`https://cataas.com/${cat.url}`} alt="Cat" />
             </div>
 
             <button onClick={callGetNewCat}>New Cat</button>
@@ -67,22 +67,6 @@ const Cat = () => {
         </div>
       )}
     </>
-  );
-};
-
-export const Loading: React.FC = () => {
-  console.log("loading..");
-  return (
-    <div className="catContainer">
-      <div className="loading">
-        <div className="lds-ring">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-      </div>
-    </div>
   );
 };
 
