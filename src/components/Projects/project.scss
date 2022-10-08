@@ -1,11 +1,14 @@
-@use "src/base" as base;
-
 .projectContainer {
   height: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .projectCardContainer {
+  padding: 5rem;
+  margin-top: 2rem;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.75rem;
 }

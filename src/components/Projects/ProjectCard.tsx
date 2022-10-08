@@ -1,31 +1,56 @@
 import React from "react";
 import "./projectcard.scss";
+import { ProjectCardProps, Technology, ProjectImages } from "./Project";
+import defaultImage from "../../assets/NZK.png";
 
-interface Props {
-  title: string;
-  description: string;
-  image_url: string;
-  technologies: string[];
-}
+const getMainImage = (project_images: ProjectImages[]): string => {
+  let mainImage: string | null = defaultImage;
+  for (var value of project_images) {
+    if (value.main === true) {
+      mainImage = value.img_path;
+      break;
+    }
+  }
 
-const ProjectCard: React.FC<Props> = ({
-  title,
+  if (mainImage !== null) {
+    return mainImage;
+  }
+  return defaultImage;
+};
+
+const ProjectCard: React.FC<ProjectCardProps> = ({
+  name,
   description,
-  image_url,
+  date_started,
+  date_completed,
   technologies,
+  project_images,
 }) => {
+  let image = getMainImage(project_images);
+  console.log(`image is ${image}`);
   return (
     <div className="projectCard">
       <div className="projectImageContainer">
-        <img className="projectImage" src={image_url} alt={title} />
+        <img
+          className="projectImage"
+          // src="https://picsum.photos/200/300"
+          src={image}
+          alt={name}
+        />
       </div>
-      <div className="cardTitle">{title}</div>
-      <div className="cardDescription">{description}</div>
+      <div className="textContainer">
+        <div className="cardTitle">{name}</div>
+        <div className="cardDescription">{description}</div>
 
-      <div className="technologyContainer">
-        {technologies.map((tech, index) => {
-          return <div className="technology">{tech}</div>;
-        })}
+        <div className="technologyContainer">
+          {technologies.map((tech, index) => {
+            return (
+              <div key={tech.id} className="technology">
+                {tech.name}
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

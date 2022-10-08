@@ -70,7 +70,7 @@ const Cat = () => {
   );
 };
 
-const Loading: React.FC = () => {
+export const Loading: React.FC = () => {
   console.log("loading..");
   return (
     <div className="catContainer">
