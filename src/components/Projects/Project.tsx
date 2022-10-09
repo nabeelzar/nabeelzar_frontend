@@ -13,7 +13,7 @@ export interface Technology {
 
 export interface ProjectImages {
   id: number;
-  img_path: string | null;
+  img_path: string;
   main: boolean;
 }
 
@@ -24,7 +24,7 @@ export interface ProjectCardProps {
   date_started: string;
   date_completed: string | null;
   technologies: Technology[];
-  project_images: ProjectImages[];
+  project_images: ProjectImages[] | [];
 }
 
 const Project = () => {

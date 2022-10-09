@@ -4,18 +4,16 @@ import { ProjectCardProps, Technology, ProjectImages } from "./Project";
 import defaultImage from "../../assets/NZK.png";
 
 const getMainImage = (project_images: ProjectImages[]): string => {
-  let mainImage: string | null = defaultImage;
+  let mainImage = defaultImage;
   for (var value of project_images) {
     if (value.main === true) {
       mainImage = value.img_path;
-      break;
+      console.log();
+      return mainImage;
     }
   }
 
-  if (mainImage !== null) {
-    return mainImage;
-  }
-  return defaultImage;
+  return mainImage;
 };
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -27,7 +25,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   project_images,
 }) => {
   let image = getMainImage(project_images);
-  console.log(`image is ${image}`);
   return (
     <div className="projectCard">
       <div className="projectImageContainer">
